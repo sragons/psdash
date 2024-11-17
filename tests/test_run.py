@@ -49,7 +49,7 @@ class TestRunner(unittest2.TestCase):
         socket.getaddrinfo('example.org', 80)
         counters = r.get_local_node().net_io_counters.update()
 
-        for c in counters.itervalues():
+        for c in counters.values():
             if c['rx_per_sec'] > 0 and c['tx_per_sec'] > 0:
                 break
         else:
